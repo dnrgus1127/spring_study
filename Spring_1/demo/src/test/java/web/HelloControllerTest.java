@@ -2,6 +2,7 @@ package web;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
@@ -10,13 +11,13 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.util.ArrayList;
-
+import com.example.demo.DemoApplication;
 import com.example.demo.web.HelloController;
 
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = HelloController.class)
+@ContextConfiguration(classes = DemoApplication.class)
 public class HelloControllerTest {
     @Autowired
     private MockMvc mvc;
