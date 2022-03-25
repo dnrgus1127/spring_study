@@ -5,16 +5,17 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+//import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-@WebAppConfiguration
+//@WebAppConfiguration
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PostsRepositoryTest {
+
     @Autowired
     PostsRepository postsRepository;
 
@@ -28,12 +29,13 @@ public class PostsRepositoryTest {
         //given
         String title = "테스트 게시글";
         String content = "테스트 본문";
+        //Long ID = 0L;
 
-        postsRepository.save(Posts.builder() // posts테이블에 쿼리 실행 id 지정시update 미지정시 insert
-                    .title(title)
-                    .content(content)
-                    .author("jojoldu@gamil.com")
-                    .build());
+        postsRepository.save(Posts.builder() // posts테이블에 쿼리 실행 id 지정시update 미지정시 insert           
+        .title(title)
+        .content(content)
+        .author("jojoldu@gmail.com")
+        .build());
 
         //when                    
         List<Posts> postsList = postsRepository.findAll(); // posts테이블의 모든 데이터 조회
