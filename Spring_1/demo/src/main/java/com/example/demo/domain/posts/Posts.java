@@ -9,12 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.example.demo.domain.BaseTimeEntity;
+
 
 
 @Getter // lombok annotation // 클래스 내 모든 필드의 Getter메소드 자동생성
 @NoArgsConstructor // lombok annotation // 기본 생성자 자동 추가 
 @Entity//@Entity  // JPA annotation
-public class Posts { // Entity Class
+public class Posts extends BaseTimeEntity{ // Entity Class
     
     @Id // PK
     @GeneratedValue(strategy = GenerationType.IDENTITY)
