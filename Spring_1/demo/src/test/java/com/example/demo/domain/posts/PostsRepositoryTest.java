@@ -32,10 +32,11 @@ public class PostsRepositoryTest {
         //Long ID = 0L;
 
         postsRepository.save(Posts.builder() // posts테이블에 쿼리 실행 id 지정시update 미지정시 insert           
-        .title(title)
-        .content(content)
-        .author("jojoldu@gmail.com")
-        .build());
+            .title(title)
+            .content(content)
+            .author("jojoldu@gmail.com")
+            .build()
+            );
 
         //when                    
         List<Posts> postsList = postsRepository.findAll(); // posts테이블의 모든 데이터 조회

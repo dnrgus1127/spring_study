@@ -3,6 +3,7 @@ package com.example.demo.web;
 import lombok.RequiredArgsConstructor;
 
 import com.example.demo.service.posts.PostsService;
+import com.example.demo.web.dto.PostsResponseDto;
 import com.example.demo.web.dto.PostsSaveRequestDto;
 import com.example.demo.web.dto.PostsUpdateRequestDto;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 
@@ -32,7 +34,7 @@ public class PostsApiController {
 
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findByID (@PathVariable Long id){
-        return postsService.findByID(id);
+        return postsService.findById(id);
     }
 
 }   
